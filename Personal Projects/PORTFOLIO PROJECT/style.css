@@ -103,10 +103,7 @@ p {
   font-size: 1.2rem;
   line-height: 1.5rem;
 }
-.single-title {
-  font-size: 3.2vh;
-  font-weight: 500;
-}
+
 a.fa-2x
 {
   color: inherit;
@@ -133,6 +130,10 @@ a.btn-1{
   align-self: center;
   display: flex;
 }
+
+
+      /* **Portfolio section** */
+
 .portfolio-root {
   position: relative;
   max-width: 100%;
@@ -190,8 +191,8 @@ a.btn-1{
 .portfolio-elem-separator {
   width: 0;
   height: 0.2em;
-  border-radius: 2px;
-  transition: width 0.3s ease-in;
+  /* border-radius: 2px;
+  transition: width 0.3s ease-in; */
   margin-top: 0.3em;
   margin-bottom: 1em;
 }
@@ -208,21 +209,24 @@ a.btn-1{
   text-align: center;
   justify-content: space-evenly;
 }
+
+
 .single-title {
-  border-bottom: 2px solid;
+  font-size: 3.2vh;
+  font-weight: 500;
 }
-.portfolio-elem-overlay {
-  padding-left: 1em;
-  border-radius: 7px;
-  z-index: 6;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  transition: opacity 0.3s ease-in;
-}
+  .portfolio-elem-overlay {
+    padding-left: 1em;
+    border-radius: 7px;
+    z-index: 6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* opacity: 1; */
+    transition: opacity 0.3s ease-in;
+  }
 .portfolio-elem-separator {
   width: 0;
   height: 0.2em;
@@ -237,17 +241,10 @@ a.btn-1{
 .portfolio-elem-1 {
   grid-area: elem1;
 }
-/* .ps {
-  --color-dark-gradient: linear-gradient(
-    31deg,
-    rgb(0, 0, 0, 0.7) 7%,
-    rgb(80, 80, 80, 0.7) 65%,
-    hsl(0 0% 62.7% / 0.7)
-  );
-} */
-.portfolio-elem:hover {
-  cursor: pointer;
-}
+
+
+
+
 /* **footer section** */
 .footer-root {
   color: white;
@@ -258,10 +255,8 @@ a.btn-1{
   box-sizing: border-box;
 }
 .social-row {
-  gap: 2.2rem;
-}
-.social-row {
   width: 100%;
+  gap: 2.2rem;
   font-size: 2em;
 }
 .footer-mesg {
@@ -277,13 +272,18 @@ a.btn-1{
   box-shadow: 20px 20px 50px rgb(0, 0, 0, 0.5);
   border-radius: 15px;
   background: rgb(255, 255, 255, 0.1);
+  /* background: red; */
   overflow: hidden;
   border-top: 1px solid rgb(255, 255, 255, 0.5);
   border-left: 1px solid rgb(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
 }
 
-/* **navbar** */
+/* infinite line at single title  */
+
+
+
+/* **navbar section** */
 a.footer-link{
   color: inherit;
   text-decoration: none;
@@ -291,17 +291,33 @@ a.footer-link{
 a.footer-link:hover {
   color: var(--color-dark-accent); 
 }
- /* **navbar section** */
-/* .navbar-right {
-background: white;
-justify-content: center;
-display: flex;
-width: calc(100% - 3.55em);
-height: 3.3em;
-flex-direction: column;
-transform: translateX();
-} */
- 
+
+.fa-times{
+  color: var(--color-dark-accent);
+}
+.fa-white{
+  color: var(--color-dark-font);
+}
+
+
+
+
+
+
+
+
+
+
+button{
+  all: initial;
+}
+
+.icon-ethereum,
+.icon,
+.fa-2x{
+  color: var(--color-dark-font);
+}
+
 .navbar-top {
   background: rebeccapurple;
   position: fixed;
@@ -319,23 +335,6 @@ transform: translateX();
   transition: transform 2s linear;
   transition: transform var(--nav-anim-time) linear;
 }
-
-/* .navbar-right {
-  background: var(--color-dark-accent);
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  top: 0;
-  right: 0;
-  height: calc(100%-3.55em);
-  width: 3.55em;
-  z-index: 7;
-   
-  transform: translateX(-100vw);
-  transition: transform 2s linear;
-  transition: transform var(--nav-anim-time) linear;
-} */
 
 .navbar-right {
   position: fixed;
@@ -360,10 +359,10 @@ transform: translateX();
 
 .fawesome-moon{
   padding-bottom: 0.5em;
+  top: 90%;
 }
 .icon-ethereum {
-  /* align-items: center; */
-  height: 200px; /* Adjust the height as needed */
+  height: 200px; 
   position: absolute;
   top: 50%;
   bottom: 50%;
@@ -394,15 +393,9 @@ transform: translateX();
   text-align: center;
 }
 
-.fawesome-moon
-{
-  /* inset: 0;
-  margin: auto; */
-  text-align: center;
-  position: relative;
-  top: 90%;
-  bottom: 10%;
-
+.icon-div{
+transform: rotate(-360deg);
+color: var(--color-dark-accent);
 }
 
 .navbar-core{
@@ -414,29 +407,53 @@ transform: translateX();
   padding: 3.5px;
 }
 
-.navbar-core.view-off {
-  display: none;
+.navbar-top{
+transform: rotate();
+}
+.navbar-right{
+  transform: translateY;
+
 }
 .navbar-core-icon.navbar-disabled:hover {
   cursor: not-allowed;
 }
 
-button{
-  /* all: initial; */
+.hidden {
+  display: none;
+}
+
+.fa-times-rotated{
+  transform: rotate(45deg);
 }
 
 .rotate{
-  animation: rotateAnimation 1s linear infinite;
+  animation: rotateAnimation 2s linear infinite;
 }
 
 @keyframes rotateAnimation {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    
+    transform: rotate(360deg);
+  }
+}
+.revrotate{
+  animation: revRotateAnimation 2s linear;
+}
+@keyframes revRotateAnimation {
     0%{
-        transform: rotate(0deg);
+        transform: rotate(360deg);
+      }
+      50%{
+        transform: rotate(180deg);
       }
       100%{
         
-        transform: rotate(245deg);
+        transform: rotate(0deg);
     }
+    
 }
 
 
@@ -472,13 +489,6 @@ button{
   }
   
 }
-/* 883.667px */
-/* @media only screen and (max-width: 768px) {
-  .portfolio-elem-1 {
-    grid-column: span 1;
-    background-color: red;
-  }
-} */
 
 
 @media screen and (max-width: 600px) {
