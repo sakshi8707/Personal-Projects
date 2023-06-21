@@ -17,43 +17,47 @@ setInterval(textLoad, 12000);
 
 // changing button text on hover in JavaScript e
 
-// var hoverButtons = document.querySelectorAll(".hover-button");
-// var hoverTexts = ["Visitor Chat", "Home", "Portfolio", "Coming Soon", "Theme"];
-
-// hoverButtons.forEach(function (button, index) {
-//   var hoverText = hoverTexts[index];
-//   var hoverTextElement = document.createElement("div");
-//   hoverTextElement.className = "hover-text";
-//   hoverTextElement.innerText = hoverText;
-//   button.appendChild(hoverTextElement);
-
-//   button.addEventListener("mouseover", function () {
-//     hoverTextElement.style.display = "block";
-//   });
-
-//   button.addEventListener("mouseout", function () {
-//     hoverTextElement.style.display = "none";
-//   });
-// });
-
 // *Navbar*
 
 const plusIcon = document.querySelector(".plus-icon");
 const navTop = document.querySelector(".navbar-top");
 const navRight = document.querySelector(".navbar-right");
-var activeBtn=0;
+const faPlus = document.getElementsByClassName("fa-times");
+var activeBtn = 0;
 
-const navAnimation = function () {
+let addStyle = function () {
+  navTop.style.transform = "translateX(0px)";
+  navRight.style.transform = "translateY(0px)";
   plusIcon.classList.add("rotate");
   setTimeout(function () {
     plusIcon.classList.remove("rotate");
-    plusIcon.classList.add("fa-plus");
+    plusIcon.classList.add("fa-white");
   }, 2000);
-  
-  navTop.style.transform = "translateX(0vh)";
-  navRight.style.transform = "translateY(0px)";
-  const isAdult = activeBtn==0  ? 1 : 0;  
 };
-plusIcon.addEventListener("click", navAnimation);
 
+let closeStyle = function () {
+  navTop.style.transform = "translateX(-100vw)";
+  navRight.style.transform = "translateY(-100vh)";
+  plusIcon.classList.remove("fa-white");
+  plusIcon.classList.add("revrotate");
+  setTimeout(function () {
+    plusIcon.classList.remove("revrotate");
+  }, 2150);
+};
 
+var isActive = false;
+plusIcon.addEventListener("click", function () {
+  // Add or remove class based on the variable
+  if (isActive) {
+    addStyle();
+    plusIcon.classList.remove("fa-times-rotated");
+
+  } else {
+    closeStyle();
+    plusIcon.classList.add("fa-times-rotated");
+  }
+  // Toggle the variable to switch the class
+  isActive = !isActive;
+});
+
+// **Portfolio section**
