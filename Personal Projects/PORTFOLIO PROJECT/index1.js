@@ -36,22 +36,30 @@ let addStyle = function () {
 };
 
 let closeStyle = function () {
+  plusIcon.classList.add("revrotate");
   navTop.style.transform = "translateX(-100vw)";
   navRight.style.transform = "translateY(-100vh)";
   plusIcon.classList.remove("fa-white");
-  plusIcon.classList.add("revrotate");
   setTimeout(function () {
     plusIcon.classList.remove("revrotate");
-  }, 2150);
+  }, 2000);
 };
 
-var isActive = false;
+var isActive = true;
+
+function reverseRotate() {
+  plusIcon.classList.add("rotate");
+  setTimeout(function () {
+    plusIcon.classList.remove("revrotate");
+  }, 2000);
+}
+
 plusIcon.addEventListener("click", function () {
   // Add or remove class based on the variable
   if (isActive) {
     addStyle();
     plusIcon.classList.remove("fa-times-rotated");
-
+    reverseRotate(); // Call the reverse rotation function after adding the navbar
   } else {
     closeStyle();
     plusIcon.classList.add("fa-times-rotated");
