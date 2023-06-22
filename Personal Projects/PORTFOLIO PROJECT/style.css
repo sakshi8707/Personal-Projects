@@ -418,9 +418,7 @@ transform: rotate();
   cursor: not-allowed;
 }
 
-.hidden {
-  display: none;
-}
+
 
 .fa-times-rotated{
   transform: rotate(45deg);
@@ -440,7 +438,7 @@ transform: rotate();
   }
 }
 .revrotate{
-  animation: revRotateAnimation 2s linear;
+  animation: revRotateAnimation 2s linear ;
 }
 @keyframes revRotateAnimation {
     0%{
