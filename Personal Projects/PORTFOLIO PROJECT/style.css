@@ -1,3 +1,7 @@
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap");  
+
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -132,7 +136,121 @@ a.btn-1{
 }
 
 
-      /* **Portfolio section** */
+
+/* **PortfolioGrid.css** */
+
+
+/* here code starts--> */
+
+
+
+.portfolio-elem-wrapper {
+  border-radius: 7px;
+}
+
+.portfolio-elem-1 {
+  grid-area: elem1;
+  background: rgb(61, 236, 113);
+  /* min-width: 500px; */
+}
+
+.portfolio-elem-2 {
+  grid-area: elem2;
+  background: rgb(79, 0, 255);
+}
+
+.portfolio-elem-3 {
+  grid-area: elem3;
+  background: rgb(29, 141, 145);
+  /* min-width: 250px; */
+}
+
+.portfolio-elem-4 {
+  grid-area: elem4;
+  background: rgb(255, 0, 0);
+}
+
+.portfolio-elem-5 {
+  grid-area: elem5;
+  background: rgb(0, 255, 242);
+}
+
+.portfolio-elem-6 {
+  grid-area: elem6;
+  background: rgb(255, 102, 0);
+}
+
+.portfolio-elem-7 {
+  grid-area: elem7;
+  background: rgb(56, 119, 255);
+}
+
+.portfolio-elem-8 {
+  grid-area: elem8;
+  background: rgb(255, 0, 221);
+}
+
+.portfolio-vertical {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.portfolio-vertical-elem {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.portfolio-elem-2 > .portfolio-elem > .portfolio-elem-title,
+.portfolio-elem-4 > .portfolio-elem > .portfolio-elem-title {
+  height: 100%;
+}   
+
+
+@media only screen and (max-width: 1200px) {
+  .portfolio-root {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "elem1 elem1 elem2"
+      "elem3 elem5 elem2"
+      "elem4 elem6 elem8"
+      "elem4 elem7 elem7";
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .portfolio-root {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "elem1 elem1"
+      "elem2 elem3"
+      "elem2 elem5"
+      "elem7 elem7"
+      "elem6 elem4"
+      "elem8 elem4";
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .portfolio-root {
+    grid-template-columns: auto;
+    grid-template-areas:
+      "elem1"
+      "elem2"
+      "elem2"
+      "elem3"
+      "elem5"
+      "elem6"
+      "elem4"
+      "elem4"
+      "elem7"
+      "elem8";
+  }
+}
+  
+/* here code ends--> */
 
 .portfolio-root {
   position: relative;
@@ -170,21 +288,7 @@ a.btn-1{
   gap: 0.5em;
   transition: filter 0.7s ease-in;
 }
-.portfolio-elem-1 {
-  grid-column: span 2;
-}
-.portfolio-elem-2 {
-  grid-row: span 2;
-}
-.portfolio-elem-4 {
-  grid-row: span 2;
-}
-.portfolio-elem-7 {
-  grid-column: span 2;
-}
-.ps {
-  border-radius: 13px;
-}
+
 .single-title {
   text-align: left;
 }
@@ -195,9 +299,6 @@ a.btn-1{
   transition: width 0.3s ease-in; */
   margin-top: 0.3em;
   margin-bottom: 1em;
-}
-.portfolio-elem-wrapper {
-  border-radius: 7px;
 }
 .portfolio-elem {
   padding: 1rem 2rem 1rem 2rem;
@@ -211,22 +312,12 @@ a.btn-1{
 }
 
 
+
 .single-title {
   font-size: 3.2vh;
   font-weight: 500;
 }
-  .portfolio-elem-overlay {
-    padding-left: 1em;
-    border-radius: 7px;
-    z-index: 6;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* opacity: 1; */
-    transition: opacity 0.3s ease-in;
-  }
+
 .portfolio-elem-separator {
   width: 0;
   height: 0.2em;
@@ -241,7 +332,6 @@ a.btn-1{
 .portfolio-elem-1 {
   grid-area: elem1;
 }
-
 
 
 
@@ -268,16 +358,6 @@ a.btn-1{
 .portfolio-vertical-elem {
   font-family: "Jetbrains Mono", monospace;
 }
-.ps {
-  box-shadow: 20px 20px 50px rgb(0, 0, 0, 0.5);
-  border-radius: 15px;
-  background: rgb(255, 255, 255, 0.1);
-  /* background: red; */
-  overflow: hidden;
-  border-top: 1px solid rgb(255, 255, 255, 0.5);
-  border-left: 1px solid rgb(255, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
-}
 
 /* infinite line at single title  */
 
@@ -299,15 +379,6 @@ a.footer-link:hover {
   color: var(--color-dark-font);
 }
 
-
-
-
-
-
-
-
-
-
 button{
   all: initial;
 }
@@ -317,6 +388,20 @@ button{
 .fa-2x{
   color: var(--color-dark-font);
 }
+
+.navbar-right {
+  /* Existing styles */
+
+  /* Add transition property for smooth animation */
+  transition: transform 0.5s ease-in-out;
+  transform: translateY(-100%);
+}
+
+.navbar-right.show {
+  transform: translateY(0%);
+}
+
+
 
 .navbar-top {
   background: rebeccapurple;
@@ -361,6 +446,13 @@ button{
   padding-bottom: 0.5em;
   top: 90%;
 }
+.nav-page-elem-wrapper, .nav-right {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
 .icon-ethereum {
   height: 200px; 
   position: absolute;
@@ -387,11 +479,6 @@ button{
    font-size: 12px; 
 }
 
-.nav-page-elem-wrapper, .nav-right {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
 
 .icon-div{
 transform: rotate(-360deg);
@@ -407,13 +494,13 @@ color: var(--color-dark-accent);
   padding: 3.5px;
 }
 
-.navbar-top{
+/* .navbar-top{
 transform: rotate();
 }
 .navbar-right{
   transform: translateY;
 
-}
+} */
 .navbar-core-icon.navbar-disabled:hover {
   cursor: not-allowed;
 }
@@ -495,3 +582,19 @@ transform: rotate();
     background: red;
   }
 }
+ /* TO ALIGN THE CONTENT WIDTH BETWEEN */
+@media (min-width: 1400px)
+{
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1200px)
+{
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+  max-width: 1140px;
+    }}
+
+
+    /* **Star Particles** */
